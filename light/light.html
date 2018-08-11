@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>红绿灯</title>
+	<style>
+		div{
+			width: 100px;
+	   	   	height: 279px;
+	   	   	background: url(deng.jpg) no-repeat;
+		}
+	</style>
+</head>
+<body>
+	<script>
+		function Deng() {
+			this.color = 0;
+			this.dom = document.createElement('div');
+			document.body.appendChild(this.dom);
+			var that = this;
+			this.dom.onclick = function() {
+				that.color++;
+				if(that.color>2){
+					that.color = 0;
+				}
+				this.style.backgroundPosition = -that.color*100 +'px 0px';
+			}	
+		}
+
+		new Deng();
+		new Deng();
+	</script>
+</body>
+</html>
